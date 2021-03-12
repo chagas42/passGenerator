@@ -1,4 +1,4 @@
-<h1>
+<h1 align="center">
     <img src='/screenshots/logo.png'/>
 </h1>
 
@@ -16,8 +16,8 @@ App feito em ReactNative para aprofundar o conhecimento na tech.
 
 O projeto foi desenvolvido utilizando as seguintes tecnologias:
 
-- @react-native-comunity/slider; 
-- @react-native-clipboard/clipboard;
+- [@react-native-comunity/slider](https://www.npmjs.com/package/@react-native-community/slider); 
+- [@react-native-clipboard/clipboard](https://github.com/react-native-clipboard/clipboard);
 
 ---
 
