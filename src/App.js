@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'; 
 import { View, Text, StyleSheet, Image, TouchableOpacity } from 'react-native';
+import Clipboard from '@react-native-clipboard/clipboard'; 
 import Slider from '@react-native-community/slider'; 
 
 let charset = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789'; 
@@ -10,14 +11,18 @@ const App = () => {
   const [ size, setSize ] = useState(10); 
  
 
+  function copyPass(){
+    Clipboard.setString(password);
+    alert('Senha copiada com sucesso!'); 
+  }; 
+
+
   function generatePass(){
     let pass = ''; 
     for(let i = 0, n = charset.length; i < size; i++){
       pass += charset.charAt(Math.floor(Math.random() * n)); 
     }
-
     setPassword(pass); 
-
   }; 
 
   return(
@@ -50,7 +55,7 @@ const App = () => {
       </TouchableOpacity>
 
       <View style={styles.area}> 
-        <Text style={styles.password}> {password} </Text>
+        <Text style={styles.password} onLongPress={copyPass} > {password} </Text>
       </View>
 
     </View>
